@@ -19,6 +19,24 @@ from django.http import Http404
 # get()
 # render_to_response()
 
+class ProductSlugDetailView(DetailView):
+	model = Product
+	def get_object(self, *args, **kwargs):
+		request   = self.request
+		slug      = self.kwargs.get('slug')
+		#instance  = get_object_or_404(Product, slug=slug, active=True)
+		try:
+			instance = Product.objects.get(slug=slug, active=True)
+		except Product.DoesNotExist:
+		    raise Http404("Product Not Found")
+		except Product.MultipleObjectsReturned:
+		    print("MultipleObjectsReturned here...")
+		    qs = Product.objects.filter(slug=slug, active=True)    	
+		    return qs.first()
+		except:
+		    raise Http404("Product Not Found!")
+		return instance        
+
 class ProductFeaturedListView(ListView):
 	def get_queryset(self, *args, **kwargs):
 		request = self.request
@@ -72,7 +90,7 @@ def product_detail_view(request, pk=None, *args, **kwargs):
 
 	# try:
 	# 	instanc = Product.objects.get(pk=pk)
-	# except Product.DoesNotExiste:
+	# except Product.DoesNotExist:
 	# 	raise Http404("Product doesn`t exist.")
 
 	#instance = get_object_or_404(Product, pk=pk)

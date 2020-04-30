@@ -1,19 +1,18 @@
 from django.db import models
 import os
 import random
+from django.db.models.signals import pre_save, post_save
 
-# Create your models here.
+from ecommerce.utils import unique_slug_generator
+
+# Create your models here.      
 
 def get_filename_ext(filepath):
 	base_name  = os.path.basename(filepath)
-	print("----------")
-	print(base_name)
 	name, ext  = os.path.splitext(base_name)
 	return name, ext
 
 def upload_image_path(instance, filename):
-    print(instance)
-    print(filename)
     new_filename  = random.randint(1, 3910209312)
     name, ext     = get_filename_ext(filename)
     final_filename =f'{new_filename}{ext}'
@@ -45,14 +44,30 @@ class ProductManager(models.Manager):
         return None                 
 
 class Product(models.Model):
-	title        = models.CharField(max_length=120)
-	description  = models.TextField()
-	price        = models.DecimalField(decimal_places=2, max_digits=10, max_length = 20, default = 39.99)
-	#image        = models.FileField(upload_to='product/', null=True, blank=True)
-	#image        = models.ImageField(upload_to='product/', null=True, blank=True)
-	image        = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
-	featured     = models.BooleanField(default=False)
-	active       = models.BooleanField(default=True)
-	objects      = ProductManager()
-	def __str__(self):return self.title
+    title = models.CharField(max_length=120)
+    description  = models.TextField()
+    price        = models.DecimalField(decimal_places=2, max_digits=10, max_length = 20, default = 39.99)
+    #image        = models.FileField(upload_to='product/', null=True, blank=True)
+    #image        = models.ImageField(upload_to='product/', null=True, blank=True)
+    image        = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
+    featured     = models.BooleanField(default=False)
+    active       = models.BooleanField(default=True)
+    slug         = models.SlugField(blank=True, default='abc', unique=True)
+
+    objects      = ProductManager()
+
+    def get_absolute_url(self):
+        return f"/product/{self.slug}"
+
+    def __str__(self):return self.title
+
+def product_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance, instance.title)
+        print("pre_save signals execute.....")
+
+pre_save.connect(product_pre_save_receiver, sender=Product)
+
+
+    
 
