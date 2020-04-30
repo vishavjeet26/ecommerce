@@ -3,9 +3,12 @@
 {{ is_paginated }}
 {{ page_obj }} -->
 
-{% for obj in object_list %}
-{{ obj.title }}
-{{ obj.description}}
+{% for obj in object_list %}<br>
+{{ obj.title }}<br>
+{{ obj.description}}<br>
+{{ obj.image }}<br>
+{{ obj.image.url }}<br>
+<img src="{{ obj.image.url }}">
 {{ obj.price}}
 {% endfor %}
 
