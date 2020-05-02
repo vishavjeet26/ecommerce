@@ -4,11 +4,14 @@
 {{ page_obj }} -->
 
 {% for obj in object_list %}<br>
+
 <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
 {{ obj.description}}<br>
 {{ obj.image }}<br>
 {{ obj.image.url }}<br>
-<img src="{{ obj.image.url }}">
+<img src="{{ obj.image.url }}" height="200px" width="200px">
+<a href="{{ obj.get_absolute_url }}" class="btn btn-primary">View</a>
+<a href="{% url 'products:detail'  obj.slug %}" class="btn btn-warning">URl shortcut</a>
 {{ obj.price}}
 {% endfor %}
 
