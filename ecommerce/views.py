@@ -6,33 +6,64 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-def old_home_page(request):
-	html_= """ 
-      sfafaasfasfsaf
-      dsdfsdfsdfsd
-      dssdsdd
-      <h1>sdhhhdsf</h1>
-	"""
-	return HttpResponse(html_)
 
-def home_page(request):
-	context = {
-	    "title" : "Hellow World!"
-	}
-	return render(request, "home.html", context)
 
-def about_page(request):
-	context = {
-	    "title" : "About World!"
-	}
+def about_view(request):
+	context = { 'page_name': 'About'}
 	return render(request, "about.html", context)
+
+def home_view(request):
+	context = { 'page_name': 'Home'}
+	return render (request, "home.html", context)
+
+def login_view(request):
+	context = { 'page_name': 'Login'}
+	return render (request, "login.html", context)
+
+def blog_view(request):
+    context = { 'page_name': 'Card List'}
+    return render (request, "blog.html" , context)
+
+def cart_view(request):
+    context = { 'page_name': 'Card List'}
+    return render (request, "cart.html" , context)
+
+def category_view(request):
+    context = { 'page_name': 'Product Catagory'}
+    return render (request, "category.html" , context)
+
+def confirmation_view(request):
+    context = { 'page_name': 'Confirmation'}
+    return render (request, "confirmation.html" , context)
+
+def element_view(request):
+    context = { 'page_name': 'Elements'}
+    return render (request, "elements.html" , context)
+
+
+def product_list_view(request):
+    context = { 'page_name': 'Product List'}
+    return render (request, "product_list.html" , context)
+
+def product_detail_view(request):
+    context = { 'page_name': 'Product Details'}
+    return render (request, "product_detail.html" , context)
+
+def blog_detail_view(request):
+    context = { 'page_name': 'Blog Details'}
+    return render (request, "blog_detail.html" , context)
+
+def checkout_view(request):
+    context = { 'page_name': 'Checkout'}
+    return render (request, "checkout.html" , context)    
 
 def contact_page(request):
 	form = ContactForm(request.POST or None)
 	context = {
-	    "title"    : "Contact World!",
-	    "content"  : "Contact Page ",
-	    "form"     :  form 
+	    "title"     : "Contact World!",
+	    "content"   : "Contact Page ",
+	    "page_name" : "Contact Us",
+	    "form"      :  form 
 	}
 	if form.is_valid():
 		print('Valid')
@@ -44,7 +75,7 @@ def contact_page(request):
 		form = ContactForm()
 	return render(request, "contact/view.html", context)
 
-def login_page(request):
+def login_view(request):
 	form = LoginForm(request.POST or None)
 	context = {
 	    "title"    : "Login Page!",

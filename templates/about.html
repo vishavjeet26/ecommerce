@@ -1,2 +1,45 @@
-<h1>{{ title}} </h1>
-<h1>About Page</h1>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main>
+ <!-- slider Area Start-->
+  <div class="slider-area ">
+    <!-- Mobile Menu -->
+    <div class="single-slider slider-height2 d-flex align-items-center" data-background="{% static 'img/hero/category.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>About</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- slider Area End-->
+    
+    <!-- product list part start-->
+    <section class="about_us padding_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="about_us_content">
+                        <h5>Our Mission</h5>
+                        <h3>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.</h3>
+                        <div class="about_us_video">
+                            <img src="{% static 'img/about_us_video.png' %}" alt="#" class="img-fluid">
+                            <a class="about_video_icon popup-youtube" href="https://www.youtube.com/watch?v=DWHB6nTyKDI"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product list part end-->
+{% include 'products/snippets/feature.html' %}     
+{% include 'products/snippets/client_review.html' %}     
+{% include 'products/snippets/subscribe.html' %} 
+
+</main>     
+{% endblock %}    

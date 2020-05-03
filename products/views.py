@@ -19,17 +19,6 @@ from django.http import Http404
 # get()
 # render_to_response()
 
-class ProductHomeView(ListView):
-	model         = Product
-	template_name ='products/index1.html'
-
-def product_home_view(request):
-	queryset = Product.objects.all()
-	context = { 'object_list':queryset }
-	return render (request, "products/index.html", context)
-
-
-
 class ProductSlugDetailView(DetailView):
 	model = Product
 	def get_object(self, *args, **kwargs):

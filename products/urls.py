@@ -2,12 +2,9 @@ from django.urls import path
 
 from products.views import product_list_view, ProductListView \
 ,product_detail_view, ProductDetailView, ProductFeaturedListView, \
-ProductFeaturedDetailView, ProductSlugDetailView, ProductHomeView, product_home_view
-
+ProductFeaturedDetailView, ProductSlugDetailView
 
 urlpatterns = [
-    path('home/', product_home_view),
-   # path('home/', ProductHomeView.as_view()),
     path('<int:pk>', ProductDetailView.as_view()),
     path('', ProductListView.as_view()),
     path('fbv/', product_list_view),

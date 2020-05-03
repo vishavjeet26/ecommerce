@@ -1,25 +1,14 @@
-{% load static %}
-<title>Home Page Template</title>
-
-<link rel='stylesheet' href='{% static "css/main.css" %}' >
-
-<div class='text-center'>
-    <h1>{{ title }}</h1>
-    <h1>Hello, world we're working!</h1>
-</div>
-
-<div class='row'>
-  <div class='col'>
-      <img src="{% static 'img/beach.jpg' %}" class='img-fluid' />
-      <p>{{ content }}</p>
-  </div>
-</div>
-{% if request.user.is_authenticated %}
-<div class='row'>
-  <div class='col'>
-  <h1>Premium</h1>
-  {{ premium_content }}
-  </div>
-</div>
-{% endif %}
-
+{% extends "base.html" %}
+{% block content %}
+<main>
+{% include 'products/snippets/preloder.html' %}  
+{% include 'products/snippets/home-slider.html' %}
+{% include 'products/snippets/category.html' %}
+{% include 'products/snippets/latest_product.html' %}
+{% include 'products/snippets/best_product.html' %}
+{% include 'products/snippets/best_collection.html' %}
+{% include 'products/snippets/latest_offer.html' %}
+{% include 'products/snippets/shop_end.html' %}
+{% include 'products/snippets/gallery.html' %}
+</main>     
+{% endblock %}
