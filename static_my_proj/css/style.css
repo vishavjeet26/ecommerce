@@ -227,17 +227,17 @@ p {
 
 /* line 38, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
 .bg-img-1 {
-  background-image: url({% static 'img/slider/slider-img-1.jpg' %});
+  background-image: url('/static/img/slider/slider-img-1.jpg');
 }
 
 /* line 41, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
 .bg-img-2 {
-  background-image: url({% static 'img/background-img/bg-img-2.jpg' %});
+  background-image: url('/static/img/background-img/bg-img-2.jpg');
 }
 
 /* line 44, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
 .cta-bg-1 {
-  background-image: url({% static 'img/background-img/bg-img-3.jpg' %});
+  background-image: url('/static/img/background-img/bg-img-3.jpg');
 }
 
 /* line 49, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
@@ -6783,17 +6783,17 @@ input:focus {
 
 /* line 1, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_bradcam.scss */
 .breadcam_bg {
-  background-image: url({% static 'img/banner/bradcam.png' %});
+  background-image: url('/static/img/banner/bradcam.png');
 }
 
 /* line 4, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_bradcam.scss */
 .breadcam_bg_1 {
-  background-image: url({% static 'img/banner/bradcam2.png' %});
+  background-image: url('/static/img/banner/bradcam2.png');
 }
 
 /* line 7, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_bradcam.scss */
 .breadcam_bg_2 {
-  background-image: url({% static 'img/banner/bradcam3.png' %});
+  background-image: url('/static/img/banner/bradcam3.png');
 }
 
 /* line 10, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_bradcam.scss */
@@ -7971,7 +7971,7 @@ del {
 
 /* line 766, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_elements.scss */
 .primary-checkbox input:checked + label {
-  background: url({% static 'img/elements/primary-check.png' %}) no-repeat center center/cover;
+  background: url('/static/img/elements/primary-check.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -8013,7 +8013,7 @@ del {
 
 /* line 803, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_elements.scss */
 .confirm-checkbox input:checked + label {
-  background: url({% static 'img/elements/success-check.png' %}) no-repeat center center/cover;
+  background: url('/static/img/elements/success-check.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -8061,7 +8061,7 @@ del {
 
 /* line 844, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_elements.scss */
 .disabled-checkbox input:checked + label {
-  background: url({% static 'img/elements/disabled-check.png' %}) no-repeat center center/cover;
+  background: url('/static/img/elements/disabled-check.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -8103,7 +8103,7 @@ del {
 
 /* line 881, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_elements.scss */
 .primary-radio input:checked + label {
-  background: url({% static 'img/elements/primary-radio.png' %}) no-repeat center center/cover;
+  background: url('/static/img/elements/primary-radio.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -8145,7 +8145,7 @@ del {
 
 /* line 918, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_elements.scss */
 .confirm-radio input:checked + label {
-  background: url({% static 'img/elements/success-radio.png' %}) no-repeat center center/cover;
+  background: url('/static/img/elements/success-radio.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -8193,7 +8193,7 @@ del {
 
 /* line 959, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_elements.scss */
 .disabled-radio input:checked + label {
-  background: url({% static 'img/elements/disabled-radio.png' %}) no-repeat center center/cover;
+  background: url('/static/img/elements/disabled-radio.png') no-repeat center center/cover;
   border: none;
 }
 
