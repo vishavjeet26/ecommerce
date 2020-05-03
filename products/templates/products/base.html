@@ -1,0 +1,32 @@
+{% load static %}
+<html class="no-js" lang="zxx">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>eCommerce HTML-5 Template </title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="site.webmanifest">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+<!-- CSS here -->
+{% include 'products/snippets/css.html' %}
+</head>
+<body>       
+<!-- Preloader Start -->
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-inner position-relative">
+        <div class="preloader-circle"></div>
+          <div class="preloader-img pere-text">
+            <img src="{% static 'img/logo/logo.png' %}" alt="Estore">
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Preloader Start -->
+{% include 'products/snippets/base_head.html' %}
+{% block content %}{% endblock %}
+{% include 'products/snippets/footer.html' %}
+{% include 'products/snippets/js.html' %} 
+</body>
+</html>
