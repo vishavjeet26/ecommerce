@@ -1,0 +1,6 @@
+{% load static %}
+<div class="single_product_item">
+    <img src="{{ instance.image.url }}" alt="" class="img-fluid">
+    <h3> <a href="{{ instance.slug }}">{{ instance.title }}</a> </h3>
+    <p>From ${{ instance.price }}</p>
+</div>

@@ -40,7 +40,8 @@ urlpatterns = [
     path('product-detail/', product_detail_view),
     path('blog-detail/', blog_detail_view),
     path('checkout/', checkout_view),
-    path('products/', include(('products.urls', 'products'), namespace="products")),  
+    path('products/', include(('products.urls', 'products'), namespace="products")),
+    path('search/', include(('search.urls', 'search'), namespace="search")), 
 ]
 
 if settings.DEBUG:
