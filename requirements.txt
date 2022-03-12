@@ -8,7 +8,7 @@ gunicorn==20.0.4
 Markdown==3.2.1
 mysqlclient==1.4.6
 orm-choices==1.0.0
-Pillow==7.1.2
+Pillow==9.0.1
 psycopg2==2.8.5
 pytz==2019.3
 sqlparse==0.3.1
